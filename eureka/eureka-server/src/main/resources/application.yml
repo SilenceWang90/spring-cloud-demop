@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka.server
+server:
+  port: 20000
+eureka:
+  instance:
+    #应用实例主机名
+    hostname: localhost
+  client:
+    #注册中心本身不作为微服务进行注册
+    register-with-eureka: false
+    #注册中心本身不需要再拉取服务注册列表，本身就保有一份服务注册列表
+    fetch-registry: false
