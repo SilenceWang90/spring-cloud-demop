@@ -5,7 +5,8 @@ server:
   port: 30000
 eureka:
   instance:
-    instance-id: wangpeng-instance-id
+    #在eureka-server的UI页面上，Status处显示当前服务的信息
+    instance-id: wangpeng-instance-id:20000
   client:
     service-url:
       #指明Eureka注册中心服务(即eureka-server服务)的地址，用于将该服务注册到注册中心，缺省值为 http://localhost:8761/eureka。
