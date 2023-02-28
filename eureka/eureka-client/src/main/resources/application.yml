@@ -4,8 +4,11 @@ spring:
 server:
   port: 30000
 eureka:
+  instance:
+    instance-id: wangpeng-instance-id
   client:
     service-url:
-      #http://{Eureka-Server服务的IP地址/Eureka-Server服务的Port端口/eureka/}
-      #必须有/eureka/这个后缀
+      #指明Eureka注册中心服务(即eureka-server服务)的地址，用于将该服务注册到注册中心
+      #格式为：http://{Eureka-Server服务的IP地址/Eureka-Server服务的Port端口/eureka/}
+      #注意必须有/eureka/这个后缀
       defaultZone: http://localhost:20000/eureka
