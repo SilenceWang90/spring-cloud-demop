@@ -6,6 +6,6 @@ server:
 eureka:
   client:
     service-url:
-      #与Eureka注册中心的通信zone和url地址
-      #格式为http://${eureka.instance.hostname}:${server.port}/eureka/
+      #http://{Eureka-Server服务的IP地址/Eureka-Server服务的Port端口/eureka/}
+      #必须有/eureka/这个后缀
       defaultZone: http://localhost:20000/eureka
