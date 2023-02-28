@@ -3,17 +3,15 @@ package com.wp.springcloud.controller;
 import com.wp.springcloud.entity.Friend;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description
  * @Author admin
  * @Date 2023/2/28 15:08
  */
-@RestController("/test")
+@RestController
+@RequestMapping("/test")
 @Slf4j
 public class TestController {
     @Value("${server.port}")
