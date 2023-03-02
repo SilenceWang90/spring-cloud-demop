@@ -11,7 +11,7 @@
     <modules>
         <module>eureka/eureka-server</module>
         <module>eureka/eureka-client</module>
-        <module>eureka-consumer</module>
+        <module>eureka/eureka-consumer</module>
     </modules>
 
     <dependencyManagement>
