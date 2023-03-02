@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-consumer
+server:
+  port: 31000
+eureka:
+  client:
+    serviceUrl:
+      #指明Eureka注册中心服务(即eureka-server服务)的地址，用于将该服务注册到注册中心，缺省值为 http://localhost:8761/eureka。
+      #其实就是eureka-server提供了一个注册服务的接口(/eureka)，各个client服务通过此接口进行服务的注册、续费等操作
+      #配置格式为：http://{Eureka-Server服务的IP地址/Eureka-Server服务的Port端口/Eureka-Server服务的servlet.context-path，没有则不需要/eureka/}。注意必须有/eureka/这个后缀
+      #如果服务注册中心为高可用集群时，多个注册中心地址以逗号分隔。
+      defaultZone: http://localhost:20000/eureka/
