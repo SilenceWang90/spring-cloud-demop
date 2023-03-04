@@ -7,6 +7,10 @@ eureka:
   instance:
     #在eureka-server的UI页面上，Status处显示当前服务的信息
     instance-id: wangpeng-instance-id:20000
+    #每隔5秒钟，向续约中心发送一次续约指令
+    lease-renewal-interval-in-seconds: 5
+    #如果30秒内，依然没有收到续约请求，判定服务过期
+    lease-expiration-duration-in-seconds: 30
   client:
     service-url:
       #指明Eureka注册中心服务(即eureka-server服务)的地址，用于将该服务注册到注册中心，缺省值为 http://localhost:8761/eureka。
@@ -14,3 +18,5 @@ eureka:
       #配置格式为：http://{Eureka-Server服务的IP地址/Eureka-Server服务的Port端口/Eureka-Server服务的servlet.context-path，没有则不需要/eureka/}。注意必须有/eureka/这个后缀
       #如果服务注册中心为高可用集群时，多个注册中心地址以逗号分隔。
       defaultZone: http://localhost:20000/eureka
+
+
