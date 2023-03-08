@@ -5,8 +5,8 @@ server:
   port: 30000
 eureka:
   instance:
-    #在eureka-server的UI页面上，Status处显示当前服务的信息
-    instance-id: wangpeng-instance-id:20000
+    #在eureka-server的UI页面上，Status处显示当前服务的信息。默认显示的是{服务器ip:端口号}
+#    instance-id: wangpeng-instance-id:30000
     #每隔5秒钟，向续约中心发送一次续约指令
     lease-renewal-interval-in-seconds: 5
     #如果30秒内，eureka-server依然没有收到续约请求，判定本服务过期
