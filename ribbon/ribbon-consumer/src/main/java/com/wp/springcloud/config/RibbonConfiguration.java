@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RibbonConfiguration {
-    @Bean
-    public IRule defaultLBStrategy() {
-        return new RoundRobinRule();
-    }
+//    @Bean
+//    public IRule defaultLBStrategy() {
+//        return new RoundRobinRule();
+//    }
 }
