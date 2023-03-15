@@ -31,6 +31,6 @@ public class TestController {
 
     @GetMapping("/expressCongratulation")
     public String expressCongratulation(@RequestParam("aa") String aa, @RequestParam("bb") String bb) {
-        return aa + bb;
+        return aa + bb + "!";
     }
 }
