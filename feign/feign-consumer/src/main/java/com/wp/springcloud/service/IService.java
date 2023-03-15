@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * @Author admin
  * @Date 2023/3/15 15:04
  */
-@FeignClient("eureka-client")
-@RequestMapping("/test")
+@FeignClient(name = "eureka-client",path = "/test")
 public interface IService {
 
     @GetMapping("/sayHi")
