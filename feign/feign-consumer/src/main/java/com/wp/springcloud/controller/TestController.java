@@ -1,36 +1,33 @@
 package com.wp.springcloud.controller;
 
 import com.wp.springcloud.entity.Friend;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import com.wp.springcloud.service.IService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description
  * @Author admin
- * @Date 2023/2/28 15:08
+ * @Date 2023/3/15 15:22
  */
 @RestController
-@RequestMapping("/test")
-@Slf4j
+@RequestMapping("test")
 public class TestController {
-    @Value("${server.port}")
-    private String port;
+    @Autowired
+    private IService iService;
 
     @GetMapping("/sayHi")
     public String sayHi() {
-        return "This is " + port;
+        return iService.sayHi();
     }
 
     @PostMapping("/sayHiPost")
     public Friend sayHiPost(@RequestBody Friend friend) {
-        log.info("You are " + friend.getName());
-        friend.setPort(port);
-        return friend;
+        return iService.sayHiPost(friend);
     }
 
     @GetMapping("/expressCongratulation")
     public String expressCongratulation(@RequestParam("aa") String aa, @RequestParam("bb") String bb) {
-        return aa + bb;
+        return iService.expressCongratulation(aa, bb);
     }
 }
