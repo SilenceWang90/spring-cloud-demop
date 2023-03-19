@@ -21,9 +21,11 @@ public class AuthInfoInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            log.info("cookie的名称{}", cookie.getName());
-            log.info("cookie的值{}", cookie.getValue());
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                log.info("cookie的名称{}", cookie.getName());
+                log.info("cookie的值{}", cookie.getValue());
+            }
         }
         String header1 = request.getHeader("header1");
         String header2 = request.getHeader("header2");
