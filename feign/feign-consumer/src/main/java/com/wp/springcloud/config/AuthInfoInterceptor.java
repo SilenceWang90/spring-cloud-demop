@@ -30,17 +30,16 @@ public class AuthInfoInterceptor implements HandlerInterceptor {
         String header1 = request.getHeader("header1");
         String header2 = request.getHeader("header2");
         log.info("获取header1为：{}，header2为：{}", header1, header2);
+        /*// 写入cookie
+        Cookie cookie = new Cookie("wpyyml", "00011122");
+        cookie.setPath("/");
+        cookie.setDomain("localhost");
+        response.addCookie(cookie);*/
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        Friend friend = new Friend();
-        friend.setName("我是cookie");
-        friend.setPort("我是cookie的Port");
-        Cookie cookie = new Cookie("wangpengcookie", friend.toString());
-        response.addCookie(cookie);
+
     }
-
-
 }
