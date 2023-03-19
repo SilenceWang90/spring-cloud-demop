@@ -28,6 +28,6 @@ public class AuthInfoInterceptor implements HandlerInterceptor {
         String header1 = request.getHeader("header1");
         String header2 = request.getHeader("header2");
         log.info("获取header1为：{}，header2为：{}", header1, header2);
-        return false;
+        return true;
     }
 }
