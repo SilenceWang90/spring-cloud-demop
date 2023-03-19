@@ -33,4 +33,13 @@ public class TestController {
     public String expressCongratulation(@RequestParam("aa") String aa, @RequestParam("bb") String bb) {
         return aa + bb + "!";
     }
+
+    @GetMapping("/retry")
+    public String retry(@RequestParam(name = "timeout") int timeout) throws InterruptedException {
+        while (timeout-- >= 0) {
+            Thread.sleep(1000);
+        }
+        log.info("retry " + port);
+        return port;
+    }
 }

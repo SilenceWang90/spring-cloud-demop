@@ -30,4 +30,9 @@ public class TestController {
     public String expressCongratulation(@RequestParam("aa") String aa, @RequestParam("bb") String bb) {
         return iService.expressCongratulation(aa, bb);
     }
+
+    @GetMapping("/testRetry")
+    public String testRetry(@RequestParam(name = "timeout") int timeout) {
+        return iService.retry(timeout);
+    }
 }

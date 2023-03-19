@@ -7,3 +7,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:20000/eureka/
+eureka-client:
+  ribbon:
+    MaxAutoRetries: 2
+    MaxAutoRetriesNextServer: 2
+    ConnectTimeout: 1000
+    ReadTimeout: 2000
+    OkToRetryOnAllOperations: true
