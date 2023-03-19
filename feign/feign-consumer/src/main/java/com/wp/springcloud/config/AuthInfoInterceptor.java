@@ -38,7 +38,7 @@ public class AuthInfoInterceptor implements HandlerInterceptor {
         Friend friend = new Friend();
         friend.setName("我是cookie");
         friend.setPort("我是cookie的Port");
-        Cookie cookie = new Cookie("特制", friend.toString());
+        Cookie cookie = new Cookie("wangpengcookie", friend.toString());
         response.addCookie(cookie);
     }
 
