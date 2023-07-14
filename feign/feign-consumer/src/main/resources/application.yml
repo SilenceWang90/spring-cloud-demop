@@ -9,6 +9,7 @@ eureka:
       defaultZone: http://localhost:20000/eureka/
 eureka-client:
   ribbon:
+    # 以下参数详解参见笔记
     MaxAutoRetries: 2
     MaxAutoRetriesNextServer: 2
     ConnectTimeout: 1000
