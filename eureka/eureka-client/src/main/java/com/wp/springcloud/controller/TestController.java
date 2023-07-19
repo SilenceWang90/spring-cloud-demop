@@ -42,4 +42,9 @@ public class TestController {
         log.info("retry " + port);
         return port;
     }
+
+    @GetMapping("/error")
+    public String error() {
+        throw new RuntimeException("black sheep");
+    }
 }
