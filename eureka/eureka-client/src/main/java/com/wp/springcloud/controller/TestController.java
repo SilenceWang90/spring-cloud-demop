@@ -45,9 +45,10 @@ public class TestController {
     }
 
     @PostMapping("/error")
-    public String error(@RequestBody HystrixRequestParam requestParam) {
+    public String error(@RequestBody HystrixRequestParam requestParam, @RequestParam("gate") String gate) {
         log.info("name是{}", requestParam.getName());
         log.info("age是{}", requestParam.getAge());
+        log.info("gate是{}", gate);
         throw new RuntimeException("black sheep");
     }
 }

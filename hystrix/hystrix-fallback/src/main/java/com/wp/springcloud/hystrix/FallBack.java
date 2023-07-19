@@ -14,9 +14,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class FallBack implements IService {
     @Override
-    public String error(HystrixRequestParam requestParam) {
+    public String error(HystrixRequestParam requestParam, String gate) {
         log.info("name是{}", requestParam.getName());
         log.info("age是{}", requestParam.getAge());
+        log.info("gate是{}", gate);
         log.info("FallBack：I'm not a black sheep any more");
         return "FallBack：I'm not a black sheep any more";
     }
