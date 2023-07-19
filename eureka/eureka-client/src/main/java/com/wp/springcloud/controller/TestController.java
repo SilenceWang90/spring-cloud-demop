@@ -1,6 +1,7 @@
 package com.wp.springcloud.controller;
 
 import com.wp.springcloud.entity.Friend;
+import com.wp.springcloud.request.HystrixRequestParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -43,8 +44,10 @@ public class TestController {
         return port;
     }
 
-    @GetMapping("/error")
-    public String error() {
+    @PostMapping("/error")
+    public String error(@RequestBody HystrixRequestParam requestParam) {
+        log.info("name是{}", requestParam.getName());
+        log.info("age是{}", requestParam.getAge());
         throw new RuntimeException("black sheep");
     }
 }

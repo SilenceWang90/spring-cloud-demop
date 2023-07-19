@@ -1,7 +1,10 @@
 package com.wp.springcloud.controller;
 
+import com.wp.springcloud.request.HystrixRequestParam;
 import com.wp.springcloud.service.IService;
-import org.springframework.web.bind.annotation.GetMapping;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,12 +17,13 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("test")
+@Slf4j
 public class TestController {
     @Resource
     private IService iService;
 
-    @GetMapping("/getError")
-    public String getError() {
-        return iService.error();
+    @PostMapping("/getError")
+    public String getError(@RequestBody HystrixRequestParam requestParam) {
+        return iService.error(requestParam);
     }
 }

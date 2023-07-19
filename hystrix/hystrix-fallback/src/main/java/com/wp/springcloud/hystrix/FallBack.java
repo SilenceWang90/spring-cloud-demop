@@ -1,5 +1,6 @@
 package com.wp.springcloud.hystrix;
 
+import com.wp.springcloud.request.HystrixRequestParam;
 import com.wp.springcloud.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class FallBack implements IService {
     @Override
-    public String error() {
+    public String error(HystrixRequestParam requestParam) {
+        log.info("name是{}", requestParam.getName());
+        log.info("age是{}", requestParam.getAge());
         log.info("FallBack：I'm not a black sheep any more");
         return "FallBack：I'm not a black sheep any more";
     }
