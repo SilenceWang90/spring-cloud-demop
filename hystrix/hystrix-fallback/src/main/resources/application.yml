@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: hystrix-consumer
+server:
+  port: 50000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+# 开启feign中的hystrix组件功能
+feign:
+  hystrix:
+    enabled: true
