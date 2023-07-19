@@ -19,5 +19,5 @@ public interface IService {
     String error(@RequestBody HystrixRequestParam requestParam, @RequestParam("gate") String gate);
 
     @GetMapping("/retry")
-    String retry(@RequestParam("timeout") int timeout);
+    String retry(@RequestParam("timeout") Integer timeout);
 }

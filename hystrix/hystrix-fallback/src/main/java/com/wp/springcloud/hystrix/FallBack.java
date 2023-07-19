@@ -23,7 +23,7 @@ public class FallBack implements IService {
     }
 
     @Override
-    public String retry(int timeout) {
+    public String retry(Integer timeout) {
         return "you are late！";
     }
 
