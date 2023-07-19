@@ -15,8 +15,9 @@ feign:
 # 全局配置
 hystrix:
   command:
-    IService#retry(Integer):
+#    IService#retry(Integer):
 #    default:
+    wpCacheKey:
       execution:
         timeout:
           # 启用全局超时

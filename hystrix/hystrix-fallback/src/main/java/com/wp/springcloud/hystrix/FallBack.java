@@ -1,5 +1,6 @@
 package com.wp.springcloud.hystrix;
 
+import com.wp.springcloud.entity.Friend;
 import com.wp.springcloud.request.HystrixRequestParam;
 import com.wp.springcloud.service.IService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,11 @@ public class FallBack implements IService {
     @Override
     public String retry(Integer timeout) {
         return "you are late！";
+    }
+
+    @Override
+    public Friend sayHiPost(Friend friend) {
+        return null;
     }
 
 }

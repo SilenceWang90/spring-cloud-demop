@@ -1,5 +1,6 @@
 package com.wp.springcloud.service;
 
+import com.wp.springcloud.entity.Friend;
 import com.wp.springcloud.hystrix.FallBack;
 import com.wp.springcloud.request.HystrixRequestParam;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -20,4 +21,7 @@ public interface IService {
 
     @GetMapping("/retry")
     String retry(@RequestParam("timeout") Integer timeout);
+
+    @PostMapping("/sayHiPost")
+    Friend sayHiPost(@RequestBody Friend friend);
 }
