@@ -21,4 +21,10 @@ public class FallBack implements IService {
         log.info("FallBack：I'm not a black sheep any more");
         return "FallBack：I'm not a black sheep any more";
     }
+
+    @Override
+    public String retry(int timeout) {
+        return "you are late！";
+    }
+
 }

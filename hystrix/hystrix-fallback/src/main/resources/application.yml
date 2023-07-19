@@ -11,3 +11,28 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+# 全局配置
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          # 全局超时
+          enable: true
+        isolation:
+          thread:
+            # 超时时间
+            timeoutInMilliseconds: 2000
+            # 超时以后终止线程
+            interruptOnTimeout: true
+            # 取消的时候终止线程
+            interruptOnFutureCancel: true
+eureka-client:
+  ribbon:
+    # 以下参数详解参见笔记《四、Feign基于Ribbon的超时和重试的策略与配置》
+    MaxAutoRetries: 2
+    MaxAutoRetriesNextServer: 2
+    ConnectTimeout: 1000
+    ReadTimeout: 8000
+    OkToRetryOnAllOperations: true

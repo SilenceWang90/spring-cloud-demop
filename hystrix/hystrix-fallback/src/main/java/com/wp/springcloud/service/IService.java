@@ -17,4 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface IService {
     @PostMapping("/error")
     String error(@RequestBody HystrixRequestParam requestParam, @RequestParam("gate") String gate);
+
+    @GetMapping("/retry")
+    String retry(@RequestParam("timeout") int timeout);
 }

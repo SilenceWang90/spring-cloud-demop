@@ -1,6 +1,5 @@
 package com.wp.springcloud.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.wp.springcloud.request.HystrixRequestParam;
 import com.wp.springcloud.service.HystrixTestService;
 import com.wp.springcloud.service.IService;
@@ -25,6 +24,7 @@ public class TestController {
 
     /**
      * 基于Feign中的Hystrix服务降级
+     *
      * @param requestParam
      * @param gate
      * @return
@@ -36,10 +36,17 @@ public class TestController {
 
     /**
      * 基于@HystrixComman的服务降级
+     *
      * @return
      */
     @GetMapping("/getHystrixCommand")
     public String getHystrixCommand() {
         return hystrixTestService.testHystrixCommand("测试传参");
     }
+
+    @GetMapping("/timeout")
+    public String timeout(@RequestParam("timeout") Integer timeout) {
+        return iService.retry(timeout);
+    }
+
 }

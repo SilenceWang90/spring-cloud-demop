@@ -37,7 +37,7 @@ public class TestController {
 
     @GetMapping("/retry")
     public String retry(@RequestParam(name = "timeout") int timeout) throws InterruptedException {
-        while (timeout-- >= 0) {
+        while (--timeout >= 0) {
             Thread.sleep(1000);
         }
         log.info("retry " + port);
