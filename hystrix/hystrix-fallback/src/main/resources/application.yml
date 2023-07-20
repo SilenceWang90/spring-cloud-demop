@@ -16,8 +16,19 @@ feign:
 hystrix:
   command:
 #    IService#retry(Integer):
-#    default:
-    wpCacheKey:
+#    wpCacheKey:
+    default:
+      circuitBreaker:
+        # 熔断的前提条件(单位是个)：在一定时间窗口内，请求数量达到5个以后开始进行熔断判断
+        requestVolumeThreshold: 5
+        # 熔断的开启条件(单位是%)：在一定时间窗口内，如果请求数量达到以上阈值，且其中达到当前百分比数量的请求都是失败的，则开启熔断器
+        errorThresholdPercentage: 50
+        # 熔断器开启后，经过多久熔断器进入半开状态(单位是毫秒)。该配置正常要比时间窗口短，不然没啥作用。
+        sleepWindowInMilliSeconds: 15000
+      metrics:
+        rollingStats:
+          # 时间窗口(单位是毫秒)
+          timeInMilliseconds: 20000
       execution:
         timeout:
           # 启用全局超时
