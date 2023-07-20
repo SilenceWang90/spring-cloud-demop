@@ -36,7 +36,7 @@ hystrix:
         isolation:
           thread:
             # 超时时间(毫秒)
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 1000
             # 线程超时以后终止线程
             interruptOnTimeout: true
             # 线程取消的时候终止线程
