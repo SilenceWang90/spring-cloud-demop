@@ -11,7 +11,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:20000/eureka
 turbine:
-  # 指定所需要监控的服务名(spring.application.name)：从Eureka注册中心获取服务ip列表
+  # 指定所需要监控的服务名(spring.application.name)：从Eureka注册中心获取服务ip列表，多个的话逗号分隔
   app-config: hystrix-consumer
   # 一个turbine一般指定只监控一个cluster，多个cluster都由一个trubine监控肯定不合理。
   # 如果大型服务集群很多可以用此配置指定监控哪个集群服务，没有的话就配置默认default即可
