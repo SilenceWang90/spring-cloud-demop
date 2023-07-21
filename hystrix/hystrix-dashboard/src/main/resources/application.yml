@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: hystrix-dashboard
+server:
+  port: 53000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+# 监控路径
+# Hystrix服务监控路径：目标服务暴露的hystrix.stream端口
+#http://localhost:50000/actuator/hystrix.stream
+# Turbine服务监控路径：目标服务暴露的turbine.stream端口
+#http://localhost:52000/actuator/turbine.stream
