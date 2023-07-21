@@ -18,7 +18,8 @@ public class HystrixTestService {
         throw new RuntimeException("执行失败");
     }
 
-    private String testHystrixCommandFallBack(String param1) {
+    private String testHystrixCommandFallBack(String param1, Throwable throwable) {
+        log.info("异常信息：{}", throwable.toString());
         log.info("参数为：{}", param1);
         return "失败补偿lalala";
     }
