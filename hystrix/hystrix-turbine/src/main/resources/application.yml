@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: hystrix-turbine
+server:
+  port: 52000
+management:
+  server:
+    port: 52001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+turbine:
+  # 指定所需要监控的服务名(spring.application.name)：从Eureka注册中心获取服务ip列表
+  app-config: hystrix-fallback
+  # 一个turbine一般指定只监控一个cluster，多个cluster都由一个trubine监控肯定不合理。
+  # 如果大型服务集群很多可以用此配置指定监控哪个集群服务，没有的话就配置默认default即可
+  cluster-name-expression: "default"
+  # 要求turbine不仅要根据host不同进行聚合，也要根据port不同进行聚合。即将host和port作为区分不同服务的条件(默认只通过host区分)
+  # 主要用于本地测试用，因为多个服务在本地时肯定都在一个host上，只是port不同，为了可以再本地测试该配置要配置为true
+  combine-host-port: true
+  # 开启actuator监控，指定hystrix相关信息暴露的地址
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream
+  # 涉及多个cluster的时候再调整，默认default即可
+  aggregator:
+    cluster-config: default
