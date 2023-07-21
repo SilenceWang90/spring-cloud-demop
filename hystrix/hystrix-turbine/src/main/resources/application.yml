@@ -19,7 +19,7 @@ turbine:
   # 要求turbine不仅要根据host不同进行聚合，也要根据port不同进行聚合。即将host和port作为区分不同服务的条件(默认只通过host区分)
   # 主要用于本地测试用，因为多个服务在本地时肯定都在一个host上，只是port不同，为了可以再本地测试该配置要配置为true
   combine-host-port: true
-  # 开启actuator监控，指定hystrix相关信息暴露的地址
+  # 开启actuator监控，指定从哪个端点拉取hystrix信息
   instanceUrlSuffix:
     default: actuator/hystrix.stream
   # 涉及多个cluster的时候再调整，默认default即可
