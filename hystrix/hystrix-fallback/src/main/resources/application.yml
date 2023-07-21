@@ -54,7 +54,7 @@ management:
     web:
       exposure:
         # 暴露所有的可监控的接口(endpoint)
-        include: *
+        include: "*"
   endpoint:
     health:
       # 展示所有信息
