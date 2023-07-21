@@ -48,3 +48,14 @@ eureka-client:
     ConnectTimeout: 1000
     ReadTimeout: 8000
     OkToRetryOnAllOperations: true
+# actuator暴露接口
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露所有的可监控的接口(endpoint)
+        include: *
+  endpoint:
+    health:
+      # 展示所有信息
+      show-details: always
