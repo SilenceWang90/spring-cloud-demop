@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 1、配置文件在git中的地址(https地址，该方式是基于http协议获取，所以使用git地址无效)
+          uri:
+          # 2、文件如果不在git repo根目录下，则在此属性上加入子目录即可，多个目录则逗号分隔。
+          # config server会分别从根目录以及search-paths指定的子目录去查找文件，还支持通配符*的语法
+#          search-paths:
+          # 3、强制拉取资源文件，默认是false。配置为false时，当手动修改config-server本地的配置信息后，与git远程信息有冲突时，是不会将远程信息同步到本地的，最终会以config-server本地的配置信息为主
+          force-pull: true
+          # 4、如果需要访问权限的话提供账号和密码即可，私有仓库时这两项必填，公有仓库可忽略
+#          username:
+#          password:
+          # 5、拉取文件至本地的指定目录
+#          basedir:
+server:
+  port: 60000
