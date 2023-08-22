@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      # 服务中心地址
+      uri: http://localhost:60000
+      profile: production
+      label: master
+server:
+  port: 61000
+myWords: ${words}
