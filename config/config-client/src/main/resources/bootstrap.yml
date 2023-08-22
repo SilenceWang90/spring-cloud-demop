@@ -7,6 +7,7 @@ spring:
       uri: http://localhost:60000
       profile: production
       label: master
+      name: config-consumer
 server:
   port: 61000
 myWords: ${words}
