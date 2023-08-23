@@ -16,8 +16,6 @@ server:
 myWords: ${words}
 
 management:
-  security:
-    enable: false
   endpoints:
     web:
       exposure:
