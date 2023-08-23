@@ -20,6 +20,9 @@ public class TestController {
     @Value("${myWords}")
     private String words;
 
+    @Value("${love}")
+    private String love;
+
     @GetMapping("/name")
     public String getName() {
         return name;
@@ -28,5 +31,10 @@ public class TestController {
     @GetMapping("/words")
     public String getWords() {
         return words;
+    }
+
+    @GetMapping("/love")
+    public String getLove() {
+        return love;
     }
 }
