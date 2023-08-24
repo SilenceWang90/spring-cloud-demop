@@ -6,9 +6,9 @@ spring:
       # 服务中心地址
       uri: http://localhost:60000
       # 读取配置文件对应的profile配置
-      profile: production
+      profile: prod
       # 读取配置文件对应的label配置
-      label: master
+      label: main
       # 读取配置文件对应的application配置。注意，如果不配置的话会以配置文件中的spring.application.name作为配置文件的application
       name: config-consumer
 server:
