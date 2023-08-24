@@ -22,8 +22,8 @@ public class TestController {
     @Value("${info.profile}")
     private String profile;
 
-    @Value("${love}")
-    private String love;
+//    @Value("${love}")
+//    private String love;
 
     @GetMapping("/name")
     public String getName() {
@@ -35,10 +35,10 @@ public class TestController {
         return words;
     }
 
-    @GetMapping("/love")
-    public String getLove() {
-        return love;
-    }
+//    @GetMapping("/love")
+//    public String getLove() {
+//        return love;
+//    }
 
     @GetMapping("/all")
     public void getAll() {
