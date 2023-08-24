@@ -19,6 +19,8 @@ public class TestController {
     // application.yml从config配置中心获取信息，然后再从application.yml获取
     @Value("${myWords}")
     private String words;
+    @Value("${info.profile}")
+    private String profile;
 
     @Value("${love}")
     private String love;
@@ -36,5 +38,12 @@ public class TestController {
     @GetMapping("/love")
     public String getLove() {
         return love;
+    }
+
+    @GetMapping("/all")
+    public void getAll() {
+        System.out.println("name 信息是：" + name);
+        System.out.println("words 信息是：" + words);
+        System.out.println("info.profile 信息是：" + profile);
     }
 }
