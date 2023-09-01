@@ -19,6 +19,7 @@ spring:
           search-paths: '{application}'
           # 3、强制拉取资源文件，默认是false。配置为false时，当手动修改config-server本地的配置信息后，与git远程信息有冲突时，是不会将远程信息同步到本地的，最终会以config-server本地的配置信息为主
           force-pull: true
+# eureka服务中心注册
 eureka:
   client:
     serviceUrl:
