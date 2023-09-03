@@ -1,7 +1,7 @@
 spring:
   application:
     name: config-bus-server
-  # 消息中心
+  # 消息中心：和client服务连接到一个同一个消息中心
   rabbitmq:
     host: localhost
     port: 5672

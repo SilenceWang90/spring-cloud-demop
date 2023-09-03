@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: config-bus-client
+  # 消息中心：和server服务连接到一个同一个消息中心
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      # pom依赖引入多个binder时(kafka和rabbitmq)，那么需要指定默认的消息中心使用哪一个。如果只引入了一个此参数可以省略
+      default-binder: rabbit
+    config:
+      # 服务中心地址：基于eureka服务注册中心的配置方式
+      discovery:
+        enabled: true
+        # 微服务的spring.application.name，即eureka-server管理界面上的服务名称
+        service-id: config-bus-server
+      # 读取配置文件对应的profile配置
+      profile: prod
+      # 读取配置文件对应的label配置
+      label: main
+      # 读取配置文件对应的application配置。注意，如果不配置的话会以配置文件中的spring.application.name作为配置文件的application
+      name: config-consumer
+server:
+  port: 61001
+myWords: ${words}
+
+# eureka服务中心注册
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:20000/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
