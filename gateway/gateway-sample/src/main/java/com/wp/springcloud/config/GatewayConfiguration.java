@@ -28,8 +28,8 @@ public class GatewayConfiguration {
                         // 添加method断言
                         .method(HttpMethod.GET)
                         /**2、添加filter过滤器，通过链式调用创建多个过滤器**/
-                        // 如下stripPrefix()的作用是将请求中url端口号后或域名后的第一个地址符删除掉。比如请求地址http://localhost:65000/java/test/sayHi，那么过滤器会将yml这个地址符删除
-                        // 如下addResponseHeader()的作用是将response响应体重增加java-param响应头
+                        // 如下stripPrefix()过滤器的作用是将请求中url端口号后或域名后的第一个地址符删除掉。比如请求地址http://localhost:65000/java/test/sayHi，那么过滤器会将yml这个地址符删除
+                        // 如下addResponseHeader()过滤器的作用是将response响应体重增加java-param响应头
                         .filters(filter -> filter.stripPrefix(1)
                                 .addResponseHeader("java-param","gateway-config"))
                         /**3、添加uri()设置匹配断言后的转发路径**/
