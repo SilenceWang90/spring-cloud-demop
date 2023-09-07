@@ -21,6 +21,7 @@
         <module>config/config-client</module>
         <module>bus/config-bus-server</module>
         <module>bus/config-bus-client</module>
+        <module>gateway/gateway-sample</module>
     </modules>
 
     <dependencyManagement>
