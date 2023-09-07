@@ -7,6 +7,8 @@ spring:
         locator:
           # 根据eureka自动创建服务路由
           enabled: true
+          # 生成的路由策略都转为小写
+          lower-case-service-id: true
 server:
   port: 65000
 
