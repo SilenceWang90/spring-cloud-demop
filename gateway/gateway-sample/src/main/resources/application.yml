@@ -13,7 +13,7 @@ spring:
       routes:
           # route路由策略唯一id
         - id: eurekaclient
-          # 断言匹配成功后转发的地址。可以是注册中心的服务名称，也可以是ip:port或域名等形式，取决于locator中设置的创建路由的方式
+          # 断言匹配成功后转发的地址。可以是注册中心的服务名称，也可以是ip:port或域名等形式，也可以是websocket
           uri: lb://EUREKA-CLIENT
           # 设置断言：集合类型属性。
           # 如下设置断言类型为Path断言。如果请求路径能匹配/yml/**，则断言返回true，可以进行执行路由器的操作
