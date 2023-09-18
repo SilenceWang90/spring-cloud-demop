@@ -23,6 +23,7 @@
         <module>bus/config-bus-client</module>
         <module>gateway/gateway-sample</module>
         <module>sleuth/sleuth-traceA</module>
+        <module>sleuth/slueth-traceB</module>
     </modules>
 
     <dependencyManagement>
