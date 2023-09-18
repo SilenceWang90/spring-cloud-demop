@@ -20,7 +20,6 @@ public class TestController {
     @GetMapping("/traceB")
     public String traceB() {
         log.info("------Trace B");
-        return restTemplate.getForEntity("http://sleuth-traceA/traceA", String.class)
-                .getBody();
+        return "traceB";
     }
 }

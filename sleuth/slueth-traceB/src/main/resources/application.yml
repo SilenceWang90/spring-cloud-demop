@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: sleuth-traceB
+  sleuth:
+    sampler:
+      # 所有数据均收集，如果只收集80%则赋值0.8即可
+      probability: 1
+server:
+  port: 62001
+logging:
+  file: ${spring.application.name}.log
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+info:
+  app:
+    name: sleuth-traceB
+    description: test
+
