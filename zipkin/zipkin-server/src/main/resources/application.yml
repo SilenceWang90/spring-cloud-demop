@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: zipkin-server
+  main:
+    # zipkin引入的两个jar包在启动时会有类冲突问题，配置允许覆盖可解决zipkin类冲突的问题
+    allow-bean-definition-overriding: true
+server:
+  port: 62100
+management:
+  metrics:
+    web:
+      server:
+        # 该配置对zipkin使用没有什么直接影响，只是减少一些zipkin本身的在启动窗口打印的日志
+        auto-time-requests: false

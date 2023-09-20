@@ -24,6 +24,7 @@
         <module>gateway/gateway-sample</module>
         <module>sleuth/sleuth-traceA</module>
         <module>sleuth/slueth-traceB</module>
+        <module>zipkin/zipkin-server</module>
     </modules>
 
     <dependencyManagement>
