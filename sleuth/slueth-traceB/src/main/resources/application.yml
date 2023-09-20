@@ -5,6 +5,8 @@ spring:
     sampler:
       # 所有数据均收集，如果只收集80%则赋值0.8即可
       probability: 1
+  zipkin:
+    base-url: http://locahost:621000
 # eureka服务中心注册
 eureka:
   client:
