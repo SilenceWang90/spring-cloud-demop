@@ -7,6 +7,9 @@ spring:
       probability: 1
   zipkin:
     base-url: http://localhost:62100
+    sender:
+      # 指定发送调用链路信息的方式为http
+      type: web
 # eureka服务中心注册
 eureka:
   client:
