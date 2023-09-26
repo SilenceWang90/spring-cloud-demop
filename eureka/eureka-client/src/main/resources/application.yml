@@ -12,6 +12,7 @@ eureka:
     lease-renewal-interval-in-seconds: 5
     #如果30秒内，eureka-server依然没有收到续约请求，判定本服务过期
     lease-expiration-duration-in-seconds: 30
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
       #指明Eureka注册中心服务(即eureka-server服务)的地址，用于将该服务注册到注册中心，缺省值为 http://localhost:8761/eureka。
