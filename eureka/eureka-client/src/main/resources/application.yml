@@ -5,7 +5,7 @@ server:
   port: 30000
 eureka:
   instance:
-    #在eureka-server的UI页面上，Status处显示当前服务的信息。默认显示的是{服务器ip:端口号}。如果自行设置的话，那么如果该服务多次启动，在
+    #在eureka-server的UI页面上，Status处显示当前服务的信息。默认显示的是{主机名:服务器ip:端口号}。如果自行设置的话，那么如果该服务多次启动，在
     #服务注册列表只能看到1个，因为id重复，所以看需要是否修改此配置
 #    instance-id: wangpeng-instance-id:30000
     #每隔5秒钟，向续约中心发送一次续约指令
