@@ -22,7 +22,14 @@ spring:
           # 设置过滤器：集合类型属性。
           # 如下设置即将请求中url端口号后或域名后的第一个地址符删除掉。比如请求地址http://localhost:65000/yml/test/sayHi，那么过滤器会将yml这个地址符删除
           filters:
+            # 参数只有1个的时候可以这么写，多个参数必须如下AbstractGatewayFilterFactory的方式通过args设置键值对
             - StripPrefix=1
+            # 必须是AbstractGatewayFilterFactory类型的bean，且创建的类名称后缀必须是GatewayFilterFactory。这样name属性赋值的时候就把GatewayFilterFactory且首字母大写即可！！！
+            - name: MyTest
+              # 对应AbstractGatewayFilterFactory类型的bean中定义的Config配置信息，用于设置变量设置。多个变量必须且只能使用如下键值对的方式~
+              args:
+                ymlName: 于蔓璐
+                ymlAge: 12
 server:
   port: 65000
 
