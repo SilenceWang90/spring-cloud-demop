@@ -22,7 +22,7 @@ import java.util.Map;
  * 用于配置Feign客户端的全局行为
  */
 @Configuration
-public class FeignConfig {
+public class FeignDecoderConfig {
 
     /**
      * 向springcloud-feign中加入自定义的HeaderPassthroughDecoder。
