@@ -18,8 +18,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Feign配置类
- * 用于配置Feign客户端的全局行为
+ * FeignDecoder配置类
  */
 @Configuration
 public class FeignDecoderConfig {
