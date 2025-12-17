@@ -32,7 +32,6 @@ public class FeignConfig {
     public Decoder feignDecoder(ObjectFactory<HttpMessageConverters> messageConverters) {
         // 1. 创建默认的 SpringDecoder，它负责将 Response Body 转为 Java Object
         Decoder defaultDecoder = new SpringDecoder(messageConverters);
-
         // 2. 将其包装在 HeaderPassthroughDecoder 中，增加Header透传功能
         return new HeaderPassthroughDecoder(defaultDecoder);
     }
@@ -41,7 +40,6 @@ public class FeignConfig {
      * 创建自定义的Decoder，用于获取Response信息，并将Response信息透传到当前的request请求中
      */
     static class HeaderPassthroughDecoder implements Decoder {
-
         /**
          * 被包装的原始解码器（即 SpringDecoder）
          * 我们将把真正的解码工作委托给它。
@@ -59,7 +57,7 @@ public class FeignConfig {
 
         /**
          * 解码方法
-         * 当 F¬eign 接收到 HTTP 响应时，会调用此方法。
+         * 当 Feign接收到HTTP响应时，会调用此方法。
          *
          * @param response Feign 封装的原始 HTTP 响应对象，包含状态码、Headers 和 Body。
          * @param type     调用方期望的返回类型（例如 String.class 或 User.class）。
