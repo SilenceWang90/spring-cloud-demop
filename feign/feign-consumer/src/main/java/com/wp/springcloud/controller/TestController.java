@@ -1,6 +1,7 @@
 package com.wp.springcloud.controller;
 
 import com.wp.springcloud.entity.Friend;
+import com.wp.springcloud.service.GatewayService;
 import com.wp.springcloud.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
     @Autowired
     private IService iService;
+    @Autowired
+    private GatewayService gatewayService;
 
     @GetMapping("/sayHi")
     public String sayHi() {
@@ -34,5 +37,14 @@ public class TestController {
     @GetMapping("/testRetry")
     public String testRetry(@RequestParam(name = "timeout") int timeout) {
         return iService.retry(timeout);
+    }
+
+    /**
+     * 通过网关连接服务
+     * @return
+     */
+    @GetMapping("/sayHiByGateway")
+    public String sayHiByGateway() {
+        return gatewayService.sayHi();
     }
 }

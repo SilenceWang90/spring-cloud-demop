@@ -33,7 +33,7 @@ public class GatewayConfiguration {
                         // 添加method断言
                         .method(HttpMethod.GET)
                         /**2、添加filter过滤器，通过链式调用创建多个过滤器**/
-                        // 如下stripPrefix()过滤器的作用是将请求中url端口号后或域名后的第一个地址符删除掉。比如请求地址http://localhost:65000/java/test/sayHi，那么过滤器会将yml这个地址符删除
+                        // 如下stripPrefix()过滤器的作用是将请求中url端口号后或域名后的第一个地址符删除掉。比如请求地址http://localhost:65000/java/test/sayHi，那么过滤器会将java这个地址符删除
                         // 如下addResponseHeader()过滤器的作用是将response响应体重增加java-param响应头
                         // new MyFilter()是通过GatewayFilter创建的自定义过滤器
                         // myTestGatewayFilterFactory是通过AbstractGatewayFilterFactory创建的自定义过滤器
