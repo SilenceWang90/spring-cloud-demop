@@ -7,7 +7,7 @@ spring:
         git:
           # 1、配置文件在git中的地址(https地址，该方式是基于http协议获取，所以使用git地址无效)
           uri: https://github.com/SilenceWang90/spring-cloud-demo-config-repo.git
-          # 2、config默认只从git仓库的根目录查找配置文件。如果配置文件不在git repo根目录下而是在子目录中，则在此属性上加入子目录地址即可，多个目录地址使用逗号分隔，如配置为 common,special/child
+          # 2、config默认只从git仓库的根目录查找配置文件。如果配置文件不在git repo根目录下而是在子目录中，则在此属性上加入子目录地址即可，多个目录地址使用逗号分隔，如配置为 common,special/child。则config-server会从git repo(git仓库根目录)/common以及git repoo(git仓库根目录)/special/child两个目录中获取配置
           # config server会分别从根目录以及search-paths指定的子目录去查找文件，还支持通配符*的语法。如果是多级目录，则形如test/wp这种配置声明即可~
           # search-paths允许使用'{application}'、'{profile}'、'{label}'作为占位符，接受客户端请求的参数替换成占位符，动态查询仓库中的目录。还可以混合多个占位符同时使用：'{application}/{profile}/{label}'
           # 占位符的值来自于客户端中spring.cloud.config.name、spring.cloud.config.profile、spring.cloud.config.label的配置。客户端启动时会发起请求将这三个配置作为参数传给config配置中心，然后替换search-paths中配置的占位符'{application}'、'{profile}'、'{label}'。
