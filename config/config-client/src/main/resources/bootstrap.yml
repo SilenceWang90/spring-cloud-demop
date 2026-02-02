@@ -5,12 +5,12 @@ spring:
     config:
       # 服务中心地址
       uri: http://localhost:60000
-      # 读取配置文件对应的profile配置
-      profile: prod
       # 读取配置文件对应的label配，即配置文件所在git仓库的分支
       label: main
-      # 读取配置文件对应的application配置。注意，如果不配置的话会以配置文件中的spring.application.name作为配置文件的application
+      # 配置文件名称{spring.cloud.config.name}-{spring.cloud.config.profile}。注意，如果不配置的话会以配置文件中的spring.application.name作为配置文件的application
       name: config-consumer
+      # 配置文件名称{spring.cloud.config.name}-{spring.cloud.config.profile}
+      profile: prod
       # 综上，当前config-client请求配置中心获取配置信息的请求地址为http://{uri}/{name}/{profile}/{label}，
       # 想要获取的文件就是：（1）label指明的git仓库分支（2）文件名称：{name}-{profile}.yml以及{name}-{profile}.properties。但让也包括不带profile的配置文件，将不带profile的配置文件和带profile的配置文件进行融合
 server:
